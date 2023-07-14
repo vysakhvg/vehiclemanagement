@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Vehicle Management{% endblock%}
+{% block content %}
+<div class="banner-container">
+    <div class="container-fluid vehicle-btn">
+        {% if user.user_type == 'is_superadmin' %}
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'addpg' %}">Add details</a>
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">Edit</a>
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">View details</a>
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">Delete</a>
+        {% elif user.user_type == 'is_admin' %}
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">Edit</a>
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">View details</a>
+        {% elif user.user_type == 'is_user' %}
+        <a class="btn btn-danger vmhomebtn shadow-lg me-3" href="{% url 'view_vlist' %}">View details</a>
+        {% else %}
+        <a class="btn btn-danger vmhomebtn shadow-lg" href="{% url 'login' %}">Login</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,193 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-size: 18px;
+    font-weight: 200;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+
+.bgimg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+    height:100vh;
+    width:auto;
+    overflow: hidden;
+}
+
+/* HEADER */
+
+header{
+    background-color:rgba(23,23,23,0.15);
+    padding:4px;
+    width:100%;
+}
+header .container-fluid{
+
+}
+
+nav a{
+    font-family: Tahoma;
+}
+
+/* BANNER */
+.banner-container{
+    width:100%;
+}
+
+.vehicle-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+
+}
+.vehicle-btn .vmhomebtn{
+	min-width: 219px;
+    padding: 10.5px 20px;
+    text-align: center;
+    font-weight: 600;
+	text-transform:uppercase;
+	font-size:18px;
+}
+
+/* SIGNUP */
+
+.signup-container, .login-container, .add_vdetails-container, .vlist-container, .vdetails-container, .vedit-container{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container .container-fluid{
+    width: 440px;
+    height: 465px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-container .form{
+    width: 350px;
+    height: 395px;
+    font-size: 14px;
+    margin-left: 17px;
+}
+
+.login-container .container-fluid{
+    width: 440px;
+    height: 232px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container .form{
+    width: 350px;
+    height: 165px;
+    font-size: 14px;
+    margin-left: 17px;
+}
+
+.registerlnk a{
+    text-decoration: none;
+}
+
+.sub-btn{
+    width: -webkit-fill-available;
+}
+
+.add_vdetails-container .container-fluid{
+    width: 440px;
+    height: 418px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add_vdetails-container .form{
+    width: 350px;
+    height: 354px;
+    font-size: 14px;
+    margin-left: 17px;
+}
+
+.vlist-container .container-fluid{
+    width: 440px;
+    min-height: 220px;
+    max-height: 502px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vlist-container .details{
+    width: 366px;
+    min-height: 152px;
+    font-size: 14px;
+    margin-left: 17px;
+    max-height: 502px;
+    overflow-y: scroll;
+}
+
+.vdetails-container .container-fluid{
+    width: 630px;
+    min-height: 314px;
+    max-height: 454px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vdetails-container .details{
+    width: 575px;
+    min-height: 245px;
+    max-height: 455px;
+    font-size: 14px;
+    margin-left: 17px;
+    overflow-y: scroll;
+}
+
+.vdetails-container .details::-webkit-scrollbar, .vlist-container .details::-webkit-scrollbar{
+    display:none;
+}
+
+.vdtbtn{
+    width: 90px;
+    color:white;
+}
+
+.vedit-container .container-fluid{
+    width: 440px;
+    height: 586px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vedit-container .form{
+    width: 350px;
+    height: 555px;
+    font-size: 14px;
+    margin-left: 17px;
+}
+
+.deleteform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 68vh;
+}

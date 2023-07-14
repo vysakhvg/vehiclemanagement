@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Vehicle Management{% endblock%}
+{% block content %}
+<div class="login-container">
+    <div class="container-fluid mt-2 shadow rounded-3">
+        <div class="form me-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Username" name="uname">
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Password" name="pass">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-danger sub-btn">Login</button>
+                </div>
+                <div class="mb-3 text-center registerlnk">
+                    <a href="{% url 'signup' %}">Register</a>
+                </div>
+                <center>
+                    {% if messages %}
+                    <div class="messages mt-3">
+                        {% for message in messages %}
+                        <h4 style="color:white;" class="{{ message.tags }}">{{ message }}</h4>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </center>
+            </form>
+        </div>
+    </div>
+    {% endblock %}

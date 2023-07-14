@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}Vehicle details{% endblock%}
+{% block content %}
+<div class="vdetails-container">
+    <div class="container-fluid mt-3 shadow-lg rounded-3">
+        <div class="details me-3 " tabindex="0">
+            <h3 class="text-center text-dark mt-3 mb-3">Vehicle details</h3>
+            <div class="dtable ps-4">
+                <table class="table table-borderless ms-4 ">
+                    <tbody>
+                    <tr>
+                        <td>Vehicle Number</td>
+                        <th>:</th>
+                        <td>{{vdetails.vehicle_number}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Vehicle type</td>
+                        <th>:</th>
+                        <td>{{vdetails.vehicle_type}}</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle Model</td>
+                        <th>:</th>
+                        <td>{{vdetails.vehicle_model}}</td>
+                    </tr>
+                    <tr>
+                        <td>Vehicle Description</td>
+                        <th>:</th>
+                        <td>{{vdetails.vehicle_description}}</td>
+                    </tr>
+                    </tbody>
+                </table>`
+            </div>
+            <div class="butn text-center mb-3">
+                {% if user.user_type == 'is_superadmin' %}
+                <a class="btn btn-success btn-sm me-2 vdtbtn" href="{% url 'addpg' %}">Add new</a>
+                <a class="btn btn-warning btn-sm me-2 vdtbtn" href="{% url 'editpg' vdetails.id %}">Edit</a>
+                <a class="btn btn-danger btn-sm me-2 vdtbtn" href="{% url 'deletepg' vdetails.id %}">Delete</a>
+                <a class="btn btn-dark btn-sm me-2 vdtbtn" href="{% url 'logout' %}">Logout</a>
+                {% elif user.user_type == 'is_admin' %}
+                <a class="btn btn-warning btn-sm me-2 vdtbtn" href="{% url 'editpg' vdetails.id %}">Edit</a>
+                <a class="btn btn-dark btn-sm me-2 vdtbtn" href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                <a class="btn btn-dark btn-sm me-2 vdtbtn" href="{% url 'logout' %}">Logout</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Vehicle Management{% endblock%}
+{% block content %}
+<div class="signup-container ">
+    <div class="container-fluid mt-3 shadow rounded-3">
+        <div class="form me-3 ">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Username" name="username" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="First name" name="fname" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Last name" name="lname" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email address" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Password" name="pass" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="cpassw" required>
+                </div>
+                <div class="mb-3">
+                    <input class="form-check-input" type="radio" name="account" value="is_superadmin" required>
+                    <label class="form-check-label me-3">
+                        Super Admin
+                    </label>
+                    <input class="form-check-input" type="radio" name="account" value="is_admin">
+                    <label class="form-check-label me-3">
+                        Admin
+                    </label>
+                    <input class="form-check-input" type="radio" name="account" value="is_user">
+                    <label class="form-check-label me-3">
+                        User
+                    </label>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-danger sub-btn">Register</button>
+                </div>
+                <center>
+                    {% if messages %}
+                    <div class="messages mt-5">
+                        {% for message in messages %}
+                        <h4 style="color:white;" class="{{ message.tags }}">{{ message }}</h4>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

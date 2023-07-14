@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Add details{% endblock%}
+{% block content %}
+<div class="add_vdetails-container">
+    <div class="container-fluid mt-3 shadow rounded-3">
+        <div class="form me-3 ">
+            <h3 class="text-center text-dark mb-3">Enter Vehicle details</h3>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Vehicle number" name="vnumber">
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="vtype">
+                        <option value="Two-wheeler" selected>Two-wheeler</option>
+                        <option value="Three-wheeler">Three-wheeler</option>
+                        <option value="Four-wheeler">Four-wheeler</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Vehicle model" name="vmodel">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" placeholder="Vehicle description" name="vdescription"
+                              rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-danger sub-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

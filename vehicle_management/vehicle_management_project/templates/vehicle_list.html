@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Vehicle details{% endblock%}
+{% block content %}
+<div class="vlist-container">
+    <div class="container-fluid mt-3 shadow rounded-3">
+        <div class="details me-3">
+            <h3 class="text-center text-dark mt-3 mb-3">Vehicle Numbers</h3>
+            <div class="dtable ">
+                <table class="table mb-3">
+                    <thead>
+                    <tr>
+                        <th scope="col">No:</th>
+                        <th scope="col">Vehicle Number</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in vlist %}
+                    <tr>
+                        <th scope="row">{{i.id}}</th>
+                        <td>{{i.vehicle_number}}</td>
+                        {% if user.user_type == 'is_superadmin' %}
+                        <td><a class="btn btn-warning btn-sm" href="{% url 'editpg' i.id %}">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'deletepg' i.id %}">Delete</a>
+                        <a class="btn btn-success btn-sm" href="{% url 'view_vdetails' i.id %}">View</a></td>
+                        {% elif user.user_type == 'is_admin' %}
+                        <td><a class="btn btn-warning btn-sm" href="{% url 'editpg' i.id %}">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'view_vdetails' i.id %}">View</a></td>
+                        {% else %}
+                        <td><a class="btn btn-success btn-sm" href="{% url 'view_vdetails' i.id %}">View</a></td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
